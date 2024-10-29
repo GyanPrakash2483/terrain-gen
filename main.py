@@ -8,6 +8,7 @@ def isChunkIn(chunk: cg.Chunk, pos: rl.Vector3, render_distance: int):
     if(chunk.location.x >= pos.x - cg.CHUNK_SIZE * render_distance and chunk.location.x <= pos.x + cg.CHUNK_SIZE * render_distance):
             if(chunk.location.z >= pos.z - cg.CHUNK_SIZE * render_distance and chunk.location.z <= pos.z + cg.CHUNK_SIZE * render_distance):
                 return True
+    cg.unloadChunk(chunk)
     return False
     
 
